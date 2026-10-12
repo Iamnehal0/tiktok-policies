@@ -3,52 +3,145 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>N8N Automation</title>
-<meta name="description" content="N8N Automation publishes short animal videos to a creator's own TikTok account.">
+<title>N8N Automation - publishing short animal videos to TikTok</title>
+<meta name="description" content="N8N Automation is a small workflow that publishes short animal videos from one creator's own library to that creator's own TikTok account.">
+<meta name="theme-color" content="#F2A31B">
 <link rel="icon" type="image/png" href="logo.png">
 <link rel="apple-touch-icon" href="logo.png">
-<style>
-  body{font-family:Arial,Helvetica,sans-serif;margin:0;color:#222;line-height:1.6;background:#fafafa}
-  header{background:#fff;border-bottom:1px solid #eee;padding:28px 16px;text-align:center}
-  header img{width:120px;height:120px;border-radius:50%}
-  header h1{margin:12px 0 4px}
-  main{max-width:760px;margin:0 auto;padding:24px 16px}
-  section{background:#fff;border:1px solid #eee;border-radius:10px;padding:8px 20px;margin-bottom:16px}
-  footer{text-align:center;padding:24px 16px;font-size:14px;color:#666}
-  a{color:#0b5fff}
-</style>
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
-<header>
-  <img src="logo.png" alt="N8N Automation logo">
-  <h1>N8N Automation</h1>
-  <p>Automated publishing of short animal videos to a creator's own TikTok account.</p>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="site-header">
+  <a class="brand" href="index.html">
+    <img src="logo.png" alt="" width="40" height="40">
+    <span>N8N Automation</span>
+  </a>
+  <nav aria-label="Main">
+    <a href="index.html" aria-current="page">Home</a>
+    <a href="index.html#how">How it works</a>
+    <a href="terms.html">Terms</a>
+    <a href="privacy.html">Privacy</a>
+  </nav>
 </header>
-<main>
-  <section>
-    <h2>What it does</h2>
-    <p>N8N Automation is a workflow tool run by an individual creator. It takes short, pre-selected pet and animal videos from the creator's own library, adds a short caption with hashtags, and publishes them to the creator's own TikTok account.</p>
+
+<main id="main">
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div>
+        <h1>Short animal videos, posted to one TikTok account.</h1>
+        <p class="lead">N8N Automation is a small workflow run by one creator. It takes videos from the creator's own library, adds a short caption, and publishes them to the creator's own TikTok account using TikTok's official Content Posting API.</p>
+        <p class="actions">
+          <a class="btn btn-primary" href="#how">See how it works</a>
+          <a class="btn btn-quiet" href="mailto:just.only.nehal.0@gmail.com">Email the operator</a>
+        </p>
+      </div>
+      <img class="hero-logo" src="logo.png" width="340" height="340" alt="N8N Automation logo: a kitten above the words Why So Good">
+    </div>
   </section>
-  <section>
-    <h2>How it works</h2>
-    <ol>
-      <li>The account owner signs in once with TikTok Login Kit and approves access.</li>
-      <li>A video from the owner's own library is selected and a short caption is prepared.</li>
-      <li>The video is published to the owner's TikTok account through the Content Posting API.</li>
-    </ol>
-  </section>
-  <section>
-    <h2>Your data</h2>
-    <p>The app only keeps the access token needed to post to the account that approved it. It does not collect information about other TikTok users and does not sell or share data. Details are in the <a href="privacy.html">Privacy Policy</a>.</p>
-  </section>
-  <section>
-    <h2>Contact</h2>
-    <p>Questions about this app: just.only.nehal.0@gmail.com</p>
-  </section>
+
+  <div class="wrap">
+    <section class="section" id="what">
+      <h2>What it does</h2>
+      <div class="section-body">
+        <p>The creator keeps animal videos in a private cloud storage folder. The workflow picks one video, writes a short caption with a few general hashtags, and sends both to TikTok. It repeats this a limited number of times per day, so the account posts steadily without anyone uploading by hand.</p>
+        <p>It only publishes. It does not read other people's content, follow or message anyone, comment, or like.</p>
+      </div>
+    </section>
+
+    <section class="section" id="how">
+      <h2>How it works</h2>
+      <div class="section-body">
+        <ol class="steps">
+          <li><div>
+            <h3>Sign in with TikTok</h3>
+            <p>The account owner signs in once through TikTok Login Kit and approves the permissions on TikTok's own screen.</p>
+          </div></li>
+          <li><div>
+            <h3>Pick a video</h3>
+            <p>The workflow takes the oldest unposted video from the owner's own folder, then moves it to a posted folder so it is never used twice.</p>
+          </div></li>
+          <li><div>
+            <h3>Write a caption</h3>
+            <p>A text-generation service writes a short, general caption with a few hashtags. It receives only a generic instruction, never the video or any account details.</p>
+          </div></li>
+          <li><div>
+            <h3>Publish to TikTok</h3>
+            <p>The video and caption are sent to the owner's account through the Content Posting API. TikTok applies its own review and privacy rules to every post.</p>
+          </div></li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="section" id="permissions">
+      <h2>Permissions we ask for</h2>
+      <div class="section-body">
+        <p>TikTok shows these permissions on its own approval screen. The app asks for nothing beyond them.</p>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr><th scope="col">Permission</th><th scope="col">Part of</th><th scope="col">What the app uses it for</th></tr>
+            </thead>
+            <tbody>
+              <tr><td><code>user.info.basic</code></td><td>Login Kit</td><td>Identifies the TikTok account that signed in.</td></tr>
+              <tr><td><code>video.publish</code></td><td>Content Posting API</td><td>Publishes the video directly to the connected account. This is the app's main job.</td></tr>
+              <tr><td><code>video.upload</code></td><td>Content Posting API</td><td>Uploads the video file to TikTok as part of publishing.</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="data">
+      <h2>Your data</h2>
+      <div class="section-body">
+        <p>The app keeps one thing about the connected account: the sign-in tokens TikTok issues, stored in the operator's own private automation setup. It does not collect data about other TikTok users, run ads, or use cookies or analytics on this website. Nothing is sold or shared for marketing.</p>
+        <p>Access can be removed at any time from TikTok's app permission settings, or by email. The <a href="privacy.html">Privacy Policy</a> has the details, and the <a href="terms.html">Terms of Service</a> explain the rules of use.</p>
+      </div>
+    </section>
+
+    <section class="section" id="faq">
+      <h2>Questions</h2>
+      <div class="section-body">
+        <details>
+          <summary>Can other people connect their TikTok accounts?</summary>
+          <p>No. N8N Automation is not offered as a public service. It posts only to the account of the creator who runs it.</p>
+        </details>
+        <details>
+          <summary>Does it do anything else on the account?</summary>
+          <p>No. It publishes the videos it is given and nothing more. It does not read messages, follow or unfollow, comment, or like.</p>
+        </details>
+        <details>
+          <summary>How is access removed?</summary>
+          <p>The account owner can revoke access at any time in TikTok's app permission settings. After that, the app can no longer post. You can also email the address below.</p>
+        </details>
+        <details>
+          <summary>Who runs this?</summary>
+          <p>An individual creator, as a personal tool. You can reach them at the email address below.</p>
+        </details>
+      </div>
+    </section>
+
+    <section class="section" id="contact">
+      <h2>Contact</h2>
+      <div class="section-body">
+        <p>Questions, access removal, and data deletion requests: <a href="mailto:just.only.nehal.0@gmail.com">just.only.nehal.0@gmail.com</a></p>
+      </div>
+    </section>
+  </div>
 </main>
-<footer>
-  <a href="terms.html">Terms of Service</a> &middot; <a href="privacy.html">Privacy Policy</a><br>
-  &copy; 2026 N8N Automation
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-links">
+      <a href="terms.html">Terms of Service</a>
+      <a href="privacy.html">Privacy Policy</a>
+      <a href="mailto:just.only.nehal.0@gmail.com">Contact</a>
+    </div>
+    <p>N8N Automation is an independent tool. It is not affiliated with or endorsed by TikTok.</p>
+    <p>&copy; 2026 N8N Automation</p>
+  </div>
 </footer>
 </body>
 </html>

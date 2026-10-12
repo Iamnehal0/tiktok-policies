@@ -1,11 +1,91 @@
 <!DOCTYPE html>
-<html>
-<head><title>Privacy Policy</title></head>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Privacy Policy - N8N Automation</title>
+<meta name="description" content="Privacy Policy for N8N Automation: what information the app handles, why, and how to remove access.">
+<meta name="theme-color" content="#F2A31B">
+<link rel="icon" type="image/png" href="logo.png">
+<link rel="apple-touch-icon" href="logo.png">
+<link rel="stylesheet" href="style.css">
+</head>
 <body>
-<h1>Privacy Policy</h1>
-<p>This application ("N8N Automation") is a personal automation tool operated solely by its developer to post pre-selected video content to their own TikTok account.</p>
-<p>The application does not collect, store, or share personal data from any third party. It only uses an authentication token, provided directly by the operator through TikTok's own login process, to post content on the operator's behalf.</p>
-<p>No data is sold, rented, or shared with advertisers or any other third party.</p>
-<p>Contact: just.only.nehal.0@gmail.com</p>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="site-header">
+  <a class="brand" href="index.html">
+    <img src="logo.png" alt="" width="40" height="40">
+    <span>N8N Automation</span>
+  </a>
+  <nav aria-label="Main">
+    <a href="index.html">Home</a>
+    <a href="index.html#how">How it works</a>
+    <a href="terms.html">Terms</a>
+    <a href="privacy.html" aria-current="page">Privacy</a>
+  </nav>
+</header>
+
+<main id="main" class="legal">
+  <h1>Privacy Policy</h1>
+  <p class="updated">Last updated: October 2026</p>
+  <p class="summary"><strong>In short:</strong> N8N Automation stores the sign-in tokens it needs to post to the TikTok account that approved it, and nothing else about that account. It does not collect data about other TikTok users, and it does not sell or share data for advertising.</p>
+
+  <h2>Who runs this service</h2>
+  <p>N8N Automation is a personal automation tool run by an individual creator (the "operator"). You can contact the operator at <a href="mailto:just.only.nehal.0@gmail.com">just.only.nehal.0@gmail.com</a>.</p>
+
+  <h2>What information the app handles</h2>
+  <ul>
+    <li><strong>TikTok sign-in details.</strong> When the account owner signs in with TikTok Login Kit, TikTok gives the app an access token, a refresh token, and an account identifier (open ID) for the account that approved access. The app does not collect or store profile details such as name, avatar, followers, or messages.</li>
+    <li><strong>Videos and captions.</strong> Videos come from the operator's own cloud storage folder (Google Drive). A video is downloaded temporarily while it is being published, then moved to a "posted" folder in the same storage. Captions are generated automatically and published with the video.</li>
+    <li><strong>Caption generation.</strong> The app sends a generic instruction to an AI text-generation service (Groq) to write a caption. The instruction contains no personal information, and the video, tokens, and account details are not sent.</li>
+    <li><strong>This website.</strong> This is a static site with no accounts, forms, cookies, analytics, or advertising. It is hosted on GitHub Pages, which may record visitors' IP addresses in its server logs under GitHub's own privacy statement.</li>
+  </ul>
+
+  <h2>How the information is used</h2>
+  <p>Only to connect to the TikTok account that approved access and to publish videos to it. It is not used for advertising, profiling, or any other purpose.</p>
+
+  <h2>Who it is shared with</h2>
+  <ul>
+    <li>TikTok, to publish the video the account owner asked to be published.</li>
+    <li>The AI text-generation service named above, which receives only the generic caption instruction.</li>
+    <li>The operator's cloud storage provider, which holds the operator's own videos.</li>
+  </ul>
+  <p>Nothing is sold, rented, or shared for marketing. Information may be disclosed if the law requires it.</p>
+
+  <h2>Storage and security</h2>
+  <p>Tokens are stored in the operator's own private automation environment and are not published or shared. Access is limited to the operator. Reasonable steps are taken to protect them, but no system is completely secure.</p>
+
+  <h2>How long it is kept</h2>
+  <p>TikTok access tokens expire automatically, usually within a day. Refresh tokens are kept only while access is active. When access is revoked, or when you ask, the stored tokens are deleted.</p>
+
+  <h2>Your choices</h2>
+  <ul>
+    <li><strong>Remove access.</strong> The account owner can revoke access at any time in TikTok's app permission settings. After that, the app can no longer post.</li>
+    <li><strong>Ask about your information.</strong> Email the address below to ask what is held about the connected account, or to have it deleted.</li>
+  </ul>
+  <p>Depending on where you live, you may have additional rights over your information. Email the address below and your request will be answered.</p>
+
+  <h2>Children</h2>
+  <p>The service is not directed to children and is not intended for anyone under 13. It does not knowingly collect information from children.</p>
+
+  <h2>Changes to this policy</h2>
+  <p>If this policy changes, the updated version will be posted on this page with a new date.</p>
+
+  <h2>Contact</h2>
+  <p>Questions about this policy: <a href="mailto:just.only.nehal.0@gmail.com">just.only.nehal.0@gmail.com</a></p>
+</main>
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-links">
+      <a href="terms.html">Terms of Service</a>
+      <a href="privacy.html">Privacy Policy</a>
+      <a href="mailto:just.only.nehal.0@gmail.com">Contact</a>
+    </div>
+    <p>N8N Automation is an independent tool. It is not affiliated with or endorsed by TikTok.</p>
+    <p>&copy; 2026 N8N Automation</p>
+  </div>
+</footer>
 </body>
 </html>
